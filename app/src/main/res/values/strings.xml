@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Bear Support</string>
+    <string name="title_string">Bear Support Den</string>
+    <string name="section_string_1">A place where you can look at cute and sexy bears when you\'re feeling down.</string>
+    <string name="launch_random_bears_button_text">Bears</string>
+    <string name="new_bear_button_text">New Bear</string>
 </resources>
