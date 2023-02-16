@@ -16,7 +16,7 @@
         android:layout_marginRight="60dp"
         android:layout_marginBottom="60dp"
         android:scaleType="centerInside"
-        android:src="@drawable/neonboof1"
+        android:src="@drawable/badonklin"
         app:layout_constraintBottom_toTopOf="@+id/newBearButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
