@@ -16,6 +16,7 @@ public class RandomBearsActivity extends AppCompatActivity {
         int[] bearImageIds = {
                 R.drawable.badonklin,
                 R.drawable.biggiant,
+                R.drawable.biggiant2,
                 R.drawable.cowboy,
                 R.drawable.cuddly,
                 R.drawable.daddy,
@@ -29,7 +30,8 @@ public class RandomBearsActivity extends AppCompatActivity {
                 R.drawable.oscar2,
                 R.drawable.oscarbear,
                 R.drawable.sexy,
-                R.drawable.thiccnd
+                R.drawable.thiccnd,
+                R.drawable.tired
         };
 
         int randomIndex = rand.nextInt(bearImageIds.length);
