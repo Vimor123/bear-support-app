@@ -3,5 +3,14 @@
     <string name="title_string">Bear Support Den</string>
     <string name="section_string_1">A place where you can look at cute and sexy bears when you\'re feeling down.</string>
     <string name="launch_random_bears_button_text">Bears</string>
+    <string name="launch_diary_button_text">Diary</string>
     <string name="new_bear_button_text">New Bear</string>
+    <string name="diary_title_text">Memories</string>
+    <string name="add_entry_button_text">New entry</string>
+    <string name="new_entry_title_text">New memory</string>
+    <string name="add_entry_submit_text">Add entry</string>
+    <string name="new_entry_title_input">Entry title</string>
+    <string name="date_input_text">Date:</string>
+    <string name="date_input">DD/MM/YYYY</string>
+    <string name="new_entry_input">Write away, ...</string>
 </resources>

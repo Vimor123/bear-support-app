@@ -18,4 +18,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RandomBearsActivity.class);
         startActivity(intent);
     }
+
+    public void launchDiary(View view) {
+        Intent intent = new Intent(this, DiaryActivity.class);
+        startActivity(intent);
+    }
 }

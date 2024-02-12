@@ -5,40 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".RandomBearsActivity">
+    tools:context=".DiaryActivity">
 
-    <ImageView
-        android:id="@+id/bearImageView"
-        android:layout_width="320dp"
-        android:layout_height="510dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="60dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/badonklin"
-        app:layout_constraintBottom_toTopOf="@+id/newBearButton"
+    <TextView
+        android:id="@+id/diaryTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/chewy"
+        android:text="@string/diary_title_text"
+        android:textColor="@color/brown1"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/newBearButton"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diaryTitleText" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/brown2"
         android:fontFamily="@font/chewy"
-        android:onClick="newBear"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
-        android:text="@string/new_bear_button_text"
+        android:text="@string/add_entry_button_text"
         android:textColor="@color/pale"
         android:textSize="30sp"
+        android:onClick="launchAddEntry"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
