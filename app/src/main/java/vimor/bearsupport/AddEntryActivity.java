@@ -66,6 +66,12 @@ public class AddEntryActivity extends AppCompatActivity {
                     String[] segments = dateString.split("/");
                     LocalDate date = LocalDate.of(Integer.parseInt(segments[2]), Integer.parseInt(segments[1]), Integer.parseInt(segments[0]));
 
+                    DataBaseHelper dataBaseHelper = new DataBaseHelper(AddEntryActivity.this);
+
+                    EntryModel entryModel = new EntryModel(0, title, date, entry);
+
+                    dataBaseHelper.addEntry(entryModel);
+
                     finish();
                 } else {
                     if (!titleSet) {

@@ -26,7 +26,6 @@
         android:id="@+id/launchRandomBearsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
         android:backgroundTint="@color/brown2"
         android:fontFamily="@font/chewy"
         android:onClick="launchRandomBears"
@@ -40,14 +39,14 @@
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sectionText1" />
+        app:layout_constraintTop_toBottomOf="@+id/sectionText1"
+        app:layout_constraintBottom_toTopOf="@+id/launchDiaryButton"/>
 
     <Button
         android:id="@+id/launchDiaryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="60dp"
         android:backgroundTint="@color/brown2"
         android:fontFamily="@font/chewy"
         android:onClick="launchDiary"
@@ -59,10 +58,10 @@
         android:textColor="@color/pale"
         android:textSize="30sp"
         app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/launchRandomBearsButton"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintTop_toBottomOf="@+id/launchRandomBearsButton"/>
 
     <TextView
         android:id="@+id/titleText"
