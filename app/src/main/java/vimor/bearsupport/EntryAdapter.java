@@ -90,6 +90,11 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.EntryViewHol
                             entryIntent.putExtra("entry", entryModel.getEntry());
                             entryIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(entryIntent);
+                        } else if (menuItem.getTitle().equals("DELETE")) {
+                            notifyItemRemoved(holder.getAdapterPosition());
+                            entries.remove(entryModel);
+                            DataBaseHelper dataBaseHelper = new DataBaseHelper(context);
+                            dataBaseHelper.deleteEntry(entryModel.getId());
                         }
                         return true;
                     }

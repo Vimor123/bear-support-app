@@ -99,4 +99,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         return true;
     }
+
+    public boolean deleteEntry(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "DELETE FROM " + ENTRY_TABLE + " WHERE " + ENTRY_COLUMN_ID + " = " + id;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            return true;
+        }
+        return false;
+    }
 }
