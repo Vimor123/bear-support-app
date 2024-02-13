@@ -45,7 +45,7 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.EntryViewHol
         LocalDate date = entryModel.getDate();
         String dateString = "";
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, y");
             dateString = formatter.format(date);
         }
         holder.dateOutput.setText(dateString);
@@ -57,7 +57,7 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.EntryViewHol
                 entryIntent.putExtra("title", entryModel.getTitle());
                 String dateString = "";
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, y");
                     dateString = formatter.format(entryModel.getDate());
                 }
                 entryIntent.putExtra("date", dateString);

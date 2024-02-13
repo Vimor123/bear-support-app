@@ -160,7 +160,7 @@
             android:paddingRight="5dp"
             android:paddingBottom="5dp"
 
-            android:lines="15"
+            android:lines="10"
             android:gravity="top|start"
             android:fontFamily="@font/chewy"
             android:hint="@string/new_entry_input"
