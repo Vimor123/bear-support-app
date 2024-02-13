@@ -86,4 +86,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         return entries;
     }
+
+    public boolean editEntry(EntryModel entryModel) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(ENTRY_COLUMN_TITLE, entryModel.getTitle());
+        cv.put(ENTRY_COLUMN_DATE, entryModel.getDate().toString());
+        cv.put(ENTRY_COLUMN_ENTRY_TEXT, entryModel.getEntry());
+
+        long update = db.update(ENTRY_TABLE, cv, ENTRY_COLUMN_ID + " = " + entryModel.getId(), null);
+
+        return true;
+    }
 }

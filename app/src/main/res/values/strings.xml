@@ -13,4 +13,8 @@
     <string name="date_input_text">Date:</string>
     <string name="date_input">DD/MM/YYYY</string>
     <string name="new_entry_input">Write away, ...</string>
+    <string name="entry_menu_edit">EDIT</string>
+    <string name="entry_menu_delete">DELETE</string>
+    <string name="edit_entry_title_text">Edit entry</string>
+    <string name="edit_entry_submit_text">Edit entry</string>
 </resources>

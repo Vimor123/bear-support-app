@@ -2,10 +2,16 @@ package vimor.bearsupport;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -58,6 +64,38 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.EntryViewHol
                 entryIntent.putExtra("entry", entryModel.getEntry());
                 entryIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(entryIntent);
+            }
+        });
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Context wrapper = new ContextThemeWrapper(context, R.style.PopupMenu);
+                PopupMenu menu = new PopupMenu(wrapper, view);
+                MenuInflater inflater = menu.getMenuInflater();
+                inflater.inflate(R.menu.entry_popup_menu, menu.getMenu());
+                menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        if (menuItem.getTitle().equals("EDIT")) {
+                            Intent entryIntent = new Intent(context, EntryEditActivity.class);
+                            entryIntent.putExtra("id", entryModel.getId());
+                            entryIntent.putExtra("title", entryModel.getTitle());
+                            String dateString = "";
+                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                                dateString = formatter.format(entryModel.getDate());
+                            }
+                            entryIntent.putExtra("date", dateString);
+                            entryIntent.putExtra("entry", entryModel.getEntry());
+                            entryIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(entryIntent);
+                        }
+                        return true;
+                    }
+                });
+                menu.show();
+                return true;
             }
         });
     }
