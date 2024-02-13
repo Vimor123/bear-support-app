@@ -20,18 +20,24 @@ public class RandomBearsActivity extends AppCompatActivity {
                 R.drawable.cowboy,
                 R.drawable.cuddly,
                 R.drawable.daddy,
+                R.drawable.doodleangy,
                 R.drawable.dreamy,
                 R.drawable.drink,
                 R.drawable.handsome,
+                R.drawable.mrmustache,
                 R.drawable.neonboof1,
                 R.drawable.neonboof2,
                 R.drawable.older,
                 R.drawable.oscar,
                 R.drawable.oscar2,
+                R.drawable.oscarbeach,
                 R.drawable.oscarbear,
                 R.drawable.sexy,
                 R.drawable.thiccnd,
-                R.drawable.tired
+                R.drawable.tired,
+                R.drawable.tony,
+                R.drawable.tonybed,
+                R.drawable.youngdoodle
         };
 
         int randomIndex = rand.nextInt(bearImageIds.length);
