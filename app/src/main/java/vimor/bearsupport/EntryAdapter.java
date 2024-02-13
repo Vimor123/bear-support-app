@@ -1,6 +1,8 @@
 package vimor.bearsupport;
 
+import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +43,23 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.EntryViewHol
             dateString = formatter.format(date);
         }
         holder.dateOutput.setText(dateString);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent entryIntent = new Intent(context, EntryViewActivity.class);
+                entryIntent.putExtra("title", entryModel.getTitle());
+                String dateString = "";
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+                    dateString = formatter.format(entryModel.getDate());
+                }
+                entryIntent.putExtra("date", dateString);
+                entryIntent.putExtra("entry", entryModel.getEntry());
+                entryIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(entryIntent);
+            }
+        });
     }
 
     @Override
